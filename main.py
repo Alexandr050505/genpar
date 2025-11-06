@@ -1,8 +1,15 @@
+"""
+Главный модуль для генератора паролей.
+
+Этот модуль предоставляет CLI-интерфейс для генерации, сохранения и поиска паролей.
+"""
+
 import argparse
 from passgen.commands import handle_generate, handle_save, handle_find
 
 
 def main():
+    """Основная функция для обработки аргументов командной строки."""
     parser = argparse.ArgumentParser(description='Password Generator')
 
     parser.add_argument('--generate', '-g', action='store_true')
@@ -30,8 +37,9 @@ def main():
     if args.find:
         result = handle_find(args.find)
         if result:
-            print(f"Service: {result['service']}")
+            print(f"Service: {args.find}")
             print(f"Login: {result['login']}")
+            print(f"Password: {result['password']}")
 
 
 if __name__ == "__main__":

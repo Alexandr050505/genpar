@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passgen package &#8212; Password Generator 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=8c38d6ca" />
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Password Generator</a></h1>
+
+
+
+<p class="blurb">Генератор безопасных паролей с CLI-интерфейсом</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=Alexandr050505&repo=genpar&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+  <section id="passgen-package">
+<h1>passgen package<a class="headerlink" href="#passgen-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+<section id="module-passgen.commands">
+<span id="passgen-commands-module"></span><h3>passgen.commands module<a class="headerlink" href="#module-passgen.commands" title="Link to this heading">¶</a></h3>
+<p>Модуль обработки команд CLI.</p>
+<p>Содержит функции для обработки аргументов командной строки.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="passgen.commands.handle_find">
+<span class="sig-prename descclassname"><span class="pre">passgen.commands.</span></span><span class="sig-name descname"><span class="pre">handle_find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/passgen/commands.html#handle_find"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#passgen.commands.handle_find" title="Link to this definition">¶</a></dt>
+<dd><p>Находит пароль по названию сервиса.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>service</strong> (<em>str</em>) – Название сервиса для поиска</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Информация о сохраненном пароле или None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passgen.commands.handle_generate">
+<span class="sig-prename descclassname"><span class="pre">passgen.commands.</span></span><span class="sig-name descname"><span class="pre">handle_generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/passgen/commands.html#handle_generate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#passgen.commands.handle_generate" title="Link to this definition">¶</a></dt>
+<dd><p>Обрабатывает команду генерации пароля.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>args</strong> – Аргументы командной строки</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Сгенерированный пароль</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passgen.commands.handle_save">
+<span class="sig-prename descclassname"><span class="pre">passgen.commands.</span></span><span class="sig-name descname"><span class="pre">handle_save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">login</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/passgen/commands.html#handle_save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#passgen.commands.handle_save" title="Link to this definition">¶</a></dt>
+<dd><p>Сохраняет пароль в хранилище.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>service</strong> (<em>str</em>) – Название сервиса</p></li>
+<li><p><strong>login</strong> (<em>str</em>) – Логин пользователя</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – Пароль для сохранения</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-passgen.generator">
+<span id="passgen-generator-module"></span><h3>passgen.generator module<a class="headerlink" href="#module-passgen.generator" title="Link to this heading">¶</a></h3>
+<p>Модуль генерации паролей.</p>
+<p>Содержит функции для создания случайных безопасных паролей.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="passgen.generator.generate_password">
+<span class="sig-prename descclassname"><span class="pre">passgen.generator.</span></span><span class="sig-name descname"><span class="pre">generate_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_upper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_special</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/passgen/generator.html#generate_password"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#passgen.generator.generate_password" title="Link to this definition">¶</a></dt>
+<dd><p>Генерирует случайный пароль с заданными параметрами.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>length</strong> (<em>int</em>) – Длина пароля (по умолчанию 12)</p></li>
+<li><p><strong>use_upper</strong> (<em>bool</em>) – Использовать заглавные буквы</p></li>
+<li><p><strong>use_digits</strong> (<em>bool</em>) – Использовать цифры</p></li>
+<li><p><strong>use_special</strong> (<em>bool</em>) – Использовать специальные символы</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Сгенерированный пароль</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">generate_password</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="go">&#39;k8f#m2pL&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-passgen.storage">
+<span id="passgen-storage-module"></span><h3>passgen.storage module<a class="headerlink" href="#module-passgen.storage" title="Link to this heading">¶</a></h3>
+<p>Модуль работы с хранилищем паролей.</p>
+<p>Обеспечивает сохранение и чтение паролей из JSON-файла.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="passgen.storage.find_password">
+<span class="sig-prename descclassname"><span class="pre">passgen.storage.</span></span><span class="sig-name descname"><span class="pre">find_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/passgen/storage.html#find_password"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#passgen.storage.find_password" title="Link to this definition">¶</a></dt>
+<dd><p>Находит пароль по названию сервиса.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>service</strong> (<em>str</em>) – Название сервиса для поиска</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Словарь с login и password или None если не найден</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>FileNotFoundError</strong> – Если файл хранилища не существует</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passgen.storage.save_password">
+<span class="sig-prename descclassname"><span class="pre">passgen.storage.</span></span><span class="sig-name descname"><span class="pre">save_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">login</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/passgen/storage.html#save_password"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#passgen.storage.save_password" title="Link to this definition">¶</a></dt>
+<dd><p>Сохраняет пароль в JSON-файл.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>service</strong> (<em>str</em>) – Название сервиса</p></li>
+<li><p><strong>login</strong> (<em>str</em>) – Логин пользователя</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – Пароль для сохранения</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>IOError</strong> – Если произошла ошибка записи в файл</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-passgen.utils">
+<span id="passgen-utils-module"></span><h3>passgen.utils module<a class="headerlink" href="#module-passgen.utils" title="Link to this heading">¶</a></h3>
+<p>Вспомогательные утилиты.</p>
+<p>Содержит дополнительные функции для работы с паролями.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="passgen.utils.calculate_strength">
+<span class="sig-prename descclassname"><span class="pre">passgen.utils.</span></span><span class="sig-name descname"><span class="pre">calculate_strength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/passgen/utils.html#calculate_strength"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#passgen.utils.calculate_strength" title="Link to this definition">¶</a></dt>
+<dd><p>Оценивает сложность пароля по шкале от 0 до 4.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>password</strong> (<em>str</em>) – Пароль для оценки</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Оценка сложности (0-4)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calculate_strength</span><span class="p">(</span><span class="s2">&quot;StrongPass123!&quot;</span><span class="p">)</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-passgen">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-passgen" title="Link to this heading">¶</a></h2>
+<p>Пакет passgen - генератор безопасных паролей.</p>
+<p>Этот пакет предоставляет функционал для генерации, хранения и управления паролями.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;2025, Александр.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/passgen.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

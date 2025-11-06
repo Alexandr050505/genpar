@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Password Generator CLI &#8212; Password Generator 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=8c38d6ca" />
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Password Generator</a></h1>
+
+
+
+<p class="blurb">Генератор безопасных паролей с CLI-интерфейсом</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=Alexandr050505&repo=genpar&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+              <div class="related top">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+    </ul>
+  </nav>
+              </div>
+          
+
+          <div class="body" role="main">
+            
+  <section id="password-generator-cli">
+<h1>Password Generator CLI<a class="headerlink" href="#password-generator-cli" title="Link to this heading">¶</a></h1>
+<a class="reference external image-reference" href="https://python.org"><img alt="https://img.shields.io/badge/Python-3.8%2B-blue" src="https://img.shields.io/badge/Python-3.8%2B-blue" />
+</a>
+<a class="reference external image-reference" href="LICENSE"><img alt="https://img.shields.io/badge/License-MIT-green" src="https://img.shields.io/badge/License-MIT-green" />
+</a>
+<p><strong>Мощный генератор паролей с безопасным хранением и CLI-интерфейсом</strong></p>
+<nav class="contents local" id="id1">
+<p class="topic-title">Оглавление</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id2" id="id14">Быстрый старт</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id15">Установка</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id16">Основные команды</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id5" id="id17">Возможности</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id18">Примеры использования</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id7" id="id19">Базовые сценарии</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id20">Продвинутые сценарии</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id9" id="id21">Аргументы командной строки</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id22">Структура проекта</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id23">Безопасность</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id24">Лицензия</a></p></li>
+<li><p><a class="reference internal" href="#id13" id="id25">Разработчик</a></p></li>
+</ul>
+</nav>
+<section id="id2">
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Быстрый старт</a><a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<section id="id3">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">Установка</a><a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ваш-username/genpar.git
+<span class="nb">cd</span><span class="w"> </span>genpar
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Основные команды</a><a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Генерация пароля</span>
+python<span class="w"> </span>main.py<span class="w"> </span>--generate<span class="w"> </span>--length<span class="w"> </span><span class="m">16</span><span class="w"> </span>--uppercase<span class="w"> </span>--digits<span class="w"> </span>--special
+
+<span class="c1"># Сохранение пароля</span>
+python<span class="w"> </span>main.py<span class="w"> </span>--generate<span class="w"> </span>--save<span class="w"> </span>--service<span class="w"> </span>gmail<span class="w"> </span>--login<span class="w"> </span>user@mail.com
+
+<span class="c1"># Поиск пароля</span>
+python<span class="w"> </span>main.py<span class="w"> </span>--find<span class="w"> </span>gmail
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">Возможности</a><a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt>✅ <strong>Безопасная генерация</strong></dt><dd><ul class="simple">
+<li><p>Настраиваемая длина пароля</p></li>
+<li><p>Использование заглавных букв, цифр, спецсимволов</p></li>
+<li><p>Случайная выборка из пула символов</p></li>
+</ul>
+</dd>
+<dt>✅ <strong>Безопасное хранение</strong></dt><dd><ul class="simple">
+<li><p>Локальное хранение в JSON-формате</p></li>
+<li><p>Привязка паролей к сервисам и логинам</p></li>
+<li><p>Быстрый поиск по базе</p></li>
+</ul>
+</dd>
+<dt>✅ <strong>Удобный CLI</strong></dt><dd><ul class="simple">
+<li><p>Простые и понятные команды</p></li>
+<li><p>Короткие алиасы для частых операций</p></li>
+<li><p>Подробная справка</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id6">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">Примеры использования</a><a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
+<section id="id7">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Базовые сценарии</a><a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<p><strong>Пример 1: Простая генерация</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>main.py<span class="w"> </span>--generate
+
+<span class="c1"># Результат: k8f#m2pL</span>
+</pre></div>
+</div>
+<p><strong>Пример 2: Сложный пароль для банка</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>main.py<span class="w"> </span>-g<span class="w"> </span>-l<span class="w"> </span><span class="m">20</span><span class="w"> </span>-u<span class="w"> </span>-d<span class="w"> </span>-s
+
+<span class="c1"># Результат: @^UF270SXb6nQaw8!k9P</span>
+</pre></div>
+</div>
+<p><strong>Пример 3: Сохранение пароля для соцсети</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>main.py<span class="w"> </span>-g<span class="w"> </span>-l<span class="w"> </span><span class="m">16</span><span class="w"> </span>-u<span class="w"> </span>-d<span class="w"> </span>--save<span class="w"> </span>--service<span class="w"> </span>vk<span class="w"> </span>--login<span class="w"> </span>mylogin
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">Продвинутые сценарии</a><a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<p><strong>Пакетная генерация нескольких паролей:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Для Windows CMD</span>
+<span class="k">for</span><span class="w"> </span>/L<span class="w"> </span>%i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span><span class="m">1</span>,1,5<span class="o">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>@python<span class="w"> </span>main.py<span class="w"> </span>--generate<span class="w"> </span>--length<span class="w"> </span><span class="m">12</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id9">
+<h2><a class="toc-backref" href="#id21" role="doc-backlink">Аргументы командной строки</a><a class="headerlink" href="#id9" title="Link to this heading">¶</a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Аргумент</p></th>
+<th class="head"><p>Алиас</p></th>
+<th class="head"><p>Значение</p></th>
+<th class="head"><p>Описание</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–generate</p></td>
+<td><p>-g</p></td>
+<td><p>флаг</p></td>
+<td><p>Генерировать пароль</p></td>
+</tr>
+<tr class="row-odd"><td><p>–length</p></td>
+<td><p>-l</p></td>
+<td><p>число (12)</p></td>
+<td><p>Длина пароля</p></td>
+</tr>
+<tr class="row-even"><td><p>–uppercase</p></td>
+<td><p>-u</p></td>
+<td><p>флаг</p></td>
+<td><p>Добавить заглавные буквы</p></td>
+</tr>
+<tr class="row-odd"><td><p>–digits</p></td>
+<td><p>-d</p></td>
+<td><p>флаг</p></td>
+<td><p>Добавить цифры</p></td>
+</tr>
+<tr class="row-even"><td><p>–special</p></td>
+<td><p>-s</p></td>
+<td><p>флаг</p></td>
+<td><p>Добавить спецсимволы</p></td>
+</tr>
+<tr class="row-odd"><td><p>–save</p></td>
+<td></td>
+<td><p>флаг</p></td>
+<td><p>Сохранить пароль</p></td>
+</tr>
+<tr class="row-even"><td><p>–service</p></td>
+<td></td>
+<td><p>строка</p></td>
+<td><p>Название сервиса</p></td>
+</tr>
+<tr class="row-odd"><td><p>–login</p></td>
+<td></td>
+<td><p>строка</p></td>
+<td><p>Логин/email</p></td>
+</tr>
+<tr class="row-even"><td><p>–find</p></td>
+<td></td>
+<td><p>строка</p></td>
+<td><p>Найти пароль по сервису</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id10">
+<h2><a class="toc-backref" href="#id22" role="doc-backlink">Структура проекта</a><a class="headerlink" href="#id10" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>genpar/
+├── main.py                 # Главный скрипт
+├── passgen/               # Пакет генератора
+│   ├── __init__.py
+│   ├── commands.py        # Обработка команд
+│   ├── generator.py       # Генерация паролей
+│   ├── storage.py         # Работа с хранилищем
+│   └── utils.py           # Вспомогательные функции
+├── docs/                  # Документация
+│   ├── source/
+│   └── build/
+└── passwords.json         # База паролей (создается автоматически)
+</pre></div>
+</div>
+</section>
+<section id="id11">
+<h2><a class="toc-backref" href="#id23" role="doc-backlink">Безопасность</a><a class="headerlink" href="#id11" title="Link to this heading">¶</a></h2>
+<p>🔒 <strong>Рекомендации по использованию:</strong></p>
+<ul class="simple">
+<li><p>Никогда не коммитьте файл <cite>passwords.json</cite> в Git</p></li>
+<li><p>Используйте длинные пароли (16+ символов)</p></li>
+<li><p>Включайте все типы символов для максимальной безопасности</p></li>
+<li><p>Храните backup файла <cite>passwords.json</cite> в безопасном месте</p></li>
+</ul>
+<p>📊 <strong>Оценка сложности пароля:</strong></p>
+<p>Программа оценивает пароли по шкале от 0 до 4:</p>
+<ul class="simple">
+<li><p>1 балл за длину ≥ 8 символов</p></li>
+<li><p>1 балл за заглавные буквы</p></li>
+<li><p>1 балл за цифры</p></li>
+<li><p>1 балл за спецсимволы</p></li>
+</ul>
+</section>
+<section id="id12">
+<h2><a class="toc-backref" href="#id24" role="doc-backlink">Лицензия</a><a class="headerlink" href="#id12" title="Link to this heading">¶</a></h2>
+<p>MIT License - смотри файл <cite>LICENSE</cite> для подробностей.</p>
+</section>
+<section id="id13">
+<h2><a class="toc-backref" href="#id25" role="doc-backlink">Разработчик</a><a class="headerlink" href="#id13" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Александр</strong> - [GitHub](<a class="reference external" href="https://github.com">https://github.com</a>/ваш-username)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Для предложений и баг-репортов создавайте issue на GitHub.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Не забывайте делать backup вашей базы паролей!</p>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &#169;2025, Александр.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
