@@ -1,16 +1,20 @@
 """
 Главный модуль для генератора паролей.
-
-Этот модуль предоставляет CLI-интерфейс для генерации, сохранения и поиска паролей.
 """
 
 import argparse
-from passgen.commands import handle_generate, handle_save, handle_find
+import sys
+import os
+
+if sys.platform == "win32":
+    os.system('chcp 65001 > nul')
+    sys.stdout.reconfigure(encoding='utf-8')
+
+from passgen.commands import handle_generate, handle_save, handle_find, handle_list, handle_delete
 
 
 def main():
-    """Основная функция для обработки аргументов командной строки."""
-    parser = argparse.ArgumentParser(description='Password Generator')
+    parser = argparse.ArgumentParser(description='Password Generator with Database Storage')
 
     parser.add_argument('--generate', '-g', action='store_true')
     parser.add_argument('--length', '-l', type=int, default=12)
@@ -23,6 +27,8 @@ def main():
     parser.add_argument('--login')
 
     parser.add_argument('--find')
+    parser.add_argument('--list', action='store_true')
+    parser.add_argument('--delete')
 
     args = parser.parse_args()
 
@@ -31,6 +37,9 @@ def main():
         print(f"Password: {password}")
 
         if args.save and args.service:
+            if not args.login:
+                print("Error: --login is required when saving password")
+                return
             handle_save(args.service, args.login, password)
             print("Password saved!")
 
@@ -40,6 +49,27 @@ def main():
             print(f"Service: {args.find}")
             print(f"Login: {result['login']}")
             print(f"Password: {result['password']}")
+        else:
+            print(f"No password found for service: {args.find}")
+
+    if args.list:
+        passwords = handle_list()
+        if passwords:
+            print("\nSaved Passwords:")
+            print("-" * 50)
+            for pwd in passwords:
+                print(f"Service: {pwd['service']}")
+                print(f"Login: {pwd['login']}")
+                print(f"Created: {pwd['created_at']}")
+                print("-" * 30)
+        else:
+            print("No passwords saved yet.")
+
+    if args.delete:
+        if handle_delete(args.delete):
+            print(f"Password for service '{args.delete}' deleted successfully")
+        else:
+            print(f"No password found for service: {args.delete}")
 
 
 if __name__ == "__main__":
